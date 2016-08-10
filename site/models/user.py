@@ -12,5 +12,6 @@ class User(BaseModel):
 
     @classmethod
     def create(cls, name, password):
-        u = cls(name, password)
-        return u.save()
+        u = cls(name=name, password=password)
+        u.save()
+        return u
