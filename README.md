@@ -1,8 +1,11 @@
-# cabal
+# Cabal
 
-cabal is a system that enables every one to use my shadowsocks service.
+Cabal is a system that enables every one to use my shadowsocks service.
 
-## Installation
+## Prerequisition
+git ruby foreman python-2.7 pre-commit
+
+## Deloyment
 
 1) install conda
 ```bash
@@ -24,8 +27,8 @@ conda env create -f cabal/environment.yml
 source activate cabal
 ```
 
-3) run app
+3) run app via foreman Procfile
 ```bash
-cd cabal/site
-python runserver.py [port]
+cd cabal
+forman s
 ```
