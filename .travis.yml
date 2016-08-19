@@ -1,0 +1,27 @@
+language: python
+python:
+    - 2.7.10
+
+dist: trusty
+sudo: required
+
+before_cache:
+  - rm -f $HOME/miniconda/pkgs/*.tar.bz2
+  - rm -rf $HOME/miniconda/pkgs/cache
+
+cache:
+  apt: true
+  directories:
+    - $HOME/miniconda
+
+addons:
+  apt:
+    packages:
+      - mysql-client-5.7
+      - mysql-client-core-5.7
+      - mysql-server-5.7.14
+  hosts:
+    - devdb
+
+script:
+  - make ci-test

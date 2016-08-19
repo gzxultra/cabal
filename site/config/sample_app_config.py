@@ -1,5 +1,6 @@
 # coding: utf-8
 
+
 class AppConfig(object):
     DB_HOST = 'localhost'
     DB_USER = 'root'
