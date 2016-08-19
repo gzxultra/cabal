@@ -2,7 +2,7 @@
 from flask import Blueprint
 
 
-cabal_bp = Blueprint(
+cabal = Blueprint(
     'cabal',
     __name__,
     template_folder='templates',

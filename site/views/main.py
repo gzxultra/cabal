@@ -1,21 +1,33 @@
 # coding: utf-8
 import time
 from flask import request
-from . import cabal_bp
-from lib.render import ok
-from lib.encrypt import hash_password
+from . import cabal
+from lib.render import ok, error
 from models.user import User
 from models.base import database
 
 
-@cabal_bp.route('/')
+@cabal.route('/')
 def index():
     return ok('yeah! its a new day!')
 
 
-@cabal_bp.route('/register.json', methods=['POST'])
+@cabal.route('/account/register.json', methods=['POST'])
 def register():
-    name = request.form.get('name')
-    password = request.form.get('password')
-    User.create(name=name, password=hash_password(password))
+    email = request.form.get('name').strip()
+    name = request.form.get('name').strip()
+    password = request.form.get('password').strip()
+    User.create(email=email, name=name, password=password)
     return ok()
+
+
+@cabal.route('/account/login.json', methods=['POST'])
+def login():
+    email = request.form.get('email').strip()
+    u = User.get(email=email)
+    if not u:
+        return error('用户尚未')
+    password = request.form.get('password').strip()
+    if not u.verfiy_password(password):
+        return error('密码错误')
+    return ok('登陆成功')

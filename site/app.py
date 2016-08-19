@@ -2,24 +2,17 @@
 import sys
 from flask import Flask
 from config import AppConfig
-from views import cabal_bp
+from views import cabal
 from models.base import database
+from flask_login import LoginManager
 
 
 app = Flask(__name__)
+login_manager = LoginManager()
+login_manager.login_view = 'views.main.login'
+
 app.config.from_object(AppConfig)
 
-
-def register_hooks(app):
-    @app.before_request
-    def _before_request():
-        database.connect()
-
-    @app.teardown_request
-    def _teardown_request(exception):
-        sys.stdout.flush()
-        database.close()
-
-
+login_manager.init_app(app)
 register_hooks(app)
-app.register_blueprint(cabal_bp, url_prefix='/cabal')
+app.register_blueprint(cabal, url_prefix='/cabal')
