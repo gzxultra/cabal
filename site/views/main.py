@@ -1,10 +1,8 @@
 # coding: utf-8
-import time
 from flask import request
-from . import cabal
+from views import cabal
 from lib.render import ok, error
 from models.user import User
-from models.base import database
 
 
 @cabal.route('/')
