@@ -4,15 +4,15 @@ from flask import Flask
 from config import AppConfig
 from views import cabal
 from models.base import database
-from flask_login import LoginManager
+# from flask_login import LoginManager
 
 
 app = Flask(__name__)
-login_manager = LoginManager()
-login_manager.login_view = 'views.main.login'
+# login_manager = LoginManager()
+# login_manager.login_view = 'views.main.login'
 
 app.config.from_object(AppConfig)
 
-login_manager.init_app(app)
-register_hooks(app)
+# login_manager.init_app(app)
+# register_hooks(app)
 app.register_blueprint(cabal, url_prefix='/cabal')

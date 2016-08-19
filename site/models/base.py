@@ -3,14 +3,14 @@ import datetime
 from peewee import Model, DateTimeField, DoesNotExist
 from playhouse.db_url import connect
 from config import AppConfig
-from app import login_manager
+# from app import login_manager
 
 database = connect(AppConfig.DB_URL)
 
 
-@login_manager.user_loader
-def load_user(user_id):
-    return User.get(user_id)
+# @login_manager.user_loader
+# def load_user(user_id):
+#     return User.get(user_id)
 
 
 class BaseModel(Model):
