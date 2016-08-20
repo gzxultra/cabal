@@ -24,4 +24,4 @@ addons:
     - localhost
 
 script:
-  - "./ci/run.sh"
+  - "ci/run.sh"
