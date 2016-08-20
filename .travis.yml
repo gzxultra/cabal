@@ -17,6 +17,7 @@ cache:
 install:
   # Install conda
   - sudo pip install conda
+  - export PATH=$HOME/miniconda/bin:$PATH
 
 addons:
   apt:
