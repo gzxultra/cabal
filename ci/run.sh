@@ -9,8 +9,8 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 export PATH="$HOME/miniconda/bin:$PATH"
 echo "$HOME/miniconda/bin:$PATH"
 export PYTHONPATH="$DIR/..:$PYTHONPATH"
-export CABAL_APP_CONFIG="site.config.ci_test_app_config"
-export CABEL_DB_CONFIG="site.config.ci_test_db_config"
+export CABAL_APP_CONFIG="site.config.test_app_config"
+export CABEL_DB_CONFIG="site.config.test_db_config"
 
 # Skip tests if no .py file changed
 # If git repo doesn't exist, then run tests anyway

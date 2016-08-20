@@ -24,4 +24,4 @@ addons:
     - localhost
 
 script:
-  - make ci-test
+  - "./ci/run.sh"
