@@ -1,7 +1,7 @@
 # coding: utf-8
 
 
-class TestDBConfig(object):
+class Config(object):
     DB_HOST = 'localhost'
     DB_USER = 'root'
     DB_NAME = 'cabal_test_$USER'

@@ -1,5 +1,5 @@
 # coding: utf-8
 
 
-class TestAppConfig(object):
+class Config(object):
     pass

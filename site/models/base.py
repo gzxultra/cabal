@@ -2,10 +2,10 @@
 import datetime
 from peewee import Model, DateTimeField, DoesNotExist
 from playhouse.db_url import connect
-from config.sample_db_config import SampleDBConfig
+from config import DBConfig
 # from app import login_manager
 
-database = connect(SampleDBConfig.DB_URL)
+database = connect(DBConfig.DB_URL)
 
 
 # @login_manager.user_loader
