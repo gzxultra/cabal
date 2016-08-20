@@ -4,6 +4,7 @@ set -e
 set -x
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+export PATH="$HOME/miniconda/bin:$PATH"
 
 if [[ -e $HOME/miniconda/bin/conda ]]; then
     conda env update -f $DIR/../environment.yml
