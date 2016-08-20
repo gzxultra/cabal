@@ -32,5 +32,15 @@ source activate cabal
 3) run app via foreman Procfile
 ```bash
 cd cabal
-forman s
+foreman s
+```
+
+## Static Files Compiled
+
+**It is recommended to use npm 3+ for a more efficient dependency tree.**
+
+```bash
+cd cabal/site
+npm install
+npm run dev
 ```
