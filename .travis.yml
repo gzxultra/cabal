@@ -14,9 +14,9 @@ cache:
   directories:
     - $HOME/miniconda
 
-# Install conda packages
 install:
-  - apt-get install conda
+  # Install conda
+  - sudo pip install conda
 
 addons:
   apt:
