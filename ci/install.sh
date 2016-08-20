@@ -16,5 +16,3 @@ else
     bash ~/miniconda.sh -b -f -p $HOME/miniconda
     conda env create -f $DIR/../environment.yml
 fi
-
-source activate cabal

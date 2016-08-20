@@ -14,6 +14,11 @@ cache:
   directories:
     - $HOME/miniconda
 
+# Install conda packages
+install:
+  - conda install --yes -c https://conda.binstar.org/faircloth-lab python=$TRAVIS_PYTHON_VERSION numpy=1.7 biopython=1.62 pytest=2.4.2 abyss velvet lastz mafft
+  - python setup.py install
+
 addons:
   apt:
     packages:
