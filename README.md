@@ -1,6 +1,8 @@
 # Cabal
-
 Cabal is a system that enables every one to use my shadowsocks service.
+
+## Continuous Integration
+[![Build Status](https://travis-ci.org/gzxultra/cabal.svg?branch=master)](https://travis-ci.org/gzxultra/cabal)
 
 ## Prerequisition
 git ruby foreman python-2.7 pre-commit
