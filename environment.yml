@@ -1,6 +1,5 @@
 name: cabal
 dependencies:
-- appnope=0.1.0=py27_0
 - backports=1.0=py27_0
 - click=6.6=py27_0
 - decorator=4.0.10=py27_0
@@ -23,7 +22,6 @@ dependencies:
 - pygments=2.1.3=py27_0
 - pymysql=0.7.6=py27_0
 - python=2.7.12=1
-- python.app=1.2=py27_4
 - readline=6.2=2
 - setuptools=25.1.6=py27_0
 - simplegeneric=0.8.1=py27_1
@@ -36,16 +34,23 @@ dependencies:
 - wheel=0.29.0=py27_0
 - zlib=1.2.8=3
 - pip:
+  - aspy.yaml==0.2.2
   - backports.shutil-get-terminal-size==1.0.0
+  - cached-property==1.3.0
+  - functools32==3.2.3.post2
   - ipython-genutils==0.1.0
+  - jsonschema==2.5.1
   - mako==1.0.4
   - mysql-python==1.2.5
+  - nodeenv==0.13.6
   - peewee==2.8.2
+  - pre-commit==0.8.2
   - prompt-toolkit==1.0.3
   - py==1.4.31
   - pycrypto==2.6.1
+  - pyterminalsize==0.1.0
   - pytest==2.9.2
+  - pyyaml==3.11
   - requests==2.11.0
   - simplejson==3.8.2
-prefix: /Users/gzxultra/miniconda2/envs/cabal
-
+  - virtualenv==15.0.3
