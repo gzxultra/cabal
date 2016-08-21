@@ -12,7 +12,7 @@ export CABEL_DB_CONFIG="config.test_db_config"
 
 
 # Activate Python environment
-
+cd $DIR
 source activate cabal
 
 
