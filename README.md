@@ -1,4 +1,6 @@
 # Cabal
+
+[![Join the chat at https://gitter.im/the-cabal/Lobby](https://badges.gitter.im/the-cabal/Lobby.svg)](https://gitter.im/the-cabal/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 Cabal is a system that enables every one to use my shadowsocks service.
 
 ## Continuous Integration
