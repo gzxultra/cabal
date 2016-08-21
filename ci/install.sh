@@ -1,11 +1,13 @@
 #!/usr/bin/env bash
 
-set -e  # 若指令传回值不等于 0，则立即退出 shell
+set -e
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
-
 export PATH="$HOME/miniconda/bin:$PATH"
+export PYTHONPATH="$DIR/..:$PYTHONPATH"
+
+
 # Update environment if cache is available
 if [[ -e $HOME/miniconda/bin/conda ]]; then
     conda env update -f $DIR/../environment.yml
