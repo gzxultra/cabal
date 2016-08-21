@@ -14,5 +14,6 @@ if [[ -e $HOME/miniconda/bin/conda ]]; then
 else
     wget https://repo.continuum.io/miniconda/Miniconda-latest-Linux-x86_64.sh -O ~/miniconda.sh
     bash ~/miniconda.sh -b -f -p $HOME/miniconda
+    export PATH="$HOME/miniconda/bin:$PATH"
     conda env create -f $DIR/../environment.yml
 fi

@@ -1,26 +1,51 @@
 name: cabal
 dependencies:
+- appnope=0.1.0=py27_0
+- backports=1.0=py27_0
+- click=6.6=py27_0
+- decorator=4.0.10=py27_0
+- flask=0.11.1=py27_0
+- flask-login=0.3.2=py27_0
+- get_terminal_size=1.0.0=py27_0
+- ipython=5.1.0=py27_0
+- ipython_genutils=0.1.0=py27_0
+- itsdangerous=0.24=py27_0
+- jinja2=2.8=py27_1
+- markupsafe=0.23=py27_2
 - openssl=1.0.2h=1
+- path.py=8.2.1=py27_0
+- pathlib2=2.1.0=py27_0
+- pexpect=4.0.1=py27_0
+- pickleshare=0.7.3=py27_0
 - pip=8.1.2=py27_0
+- prompt_toolkit=1.0.3=py27_0
+- ptyprocess=0.5.1=py27_0
+- pygments=2.1.3=py27_0
+- pymysql=0.7.6=py27_0
 - python=2.7.12=1
+- python.app=1.2=py27_4
 - readline=6.2=2
 - setuptools=25.1.6=py27_0
+- simplegeneric=0.8.1=py27_1
+- six=1.10.0=py27_0
 - sqlite=3.13.0=0
 - tk=8.5.18=0
+- traitlets=4.2.2=py27_0
+- wcwidth=0.1.7=py27_0
+- werkzeug=0.11.10=py27_0
 - wheel=0.29.0=py27_0
 - zlib=1.2.8=3
 - pip:
-  - click==6.6
-  - flask==0.11.1
-  - itsdangerous==0.24
-  - jinja2==2.8
+  - backports.shutil-get-terminal-size==1.0.0
+  - ipython-genutils==0.1.0
   - mako==1.0.4
-  - markupsafe==0.23
+  - mysql-python==1.2.5
   - peewee==2.8.2
+  - prompt-toolkit==1.0.3
   - py==1.4.31
   - pycrypto==2.6.1
   - pytest==2.9.2
   - requests==2.11.0
   - simplejson==3.8.2
-  - werkzeug==0.11.10
-  - psutil==4.3.0
+prefix: /Users/gzxultra/miniconda2/envs/cabal
+

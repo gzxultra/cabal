@@ -1,11 +1,18 @@
 # coding: utf-8
 from flask import Blueprint
+from lib.render import error
 
 
-cabal = Blueprint(
-    'cabal',
-    __name__,
-    template_folder='templates',
-    static_folder='static')
+main_bp = Blueprint('main_bp', __name__)
 
-from views import main  # noqa
+
+@main_bp.app_errorhandler(404)
+def page_note_found(e):
+    return error('page not found', status_code=404), 404
+
+@main_bp.app_errorhandler(500)
+def internal_server_erorr(e):
+    return error('internal server error', status_code=500), 500
+
+
+from . import auth, main

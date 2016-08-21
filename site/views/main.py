@@ -1,31 +1,20 @@
 # coding: utf-8
-from flask import request
-from views import cabal
+from flask import request, render_template, url_for
+from views import main_bp
 from lib.render import ok, error
 from models.user import User
 
 
-@cabal.route('/')
+@main_bp.route('/', methods=['GET'])
 def index():
-    return ok('yeah! its a new day!')
+    return ok('Yeah, it\'s a god damn new day!')
 
 
-@cabal.route('/account/register.json', methods=['POST'])
-def register():
-    email = request.form.get('name').strip()
-    name = request.form.get('name').strip()
-    password = request.form.get('password').strip()
-    User.create(email=email, name=name, password=password)
-    return ok()
-
-
-@cabal.route('/account/login.json', methods=['POST'])
-def login():
-    email = request.form.get('email').strip()
-    u = User.get(email=email)
-    if not u:
-        return error('用户尚未')
-    password = request.form.get('password').strip()
-    if not u.verfiy_password(password):
-        return error('密码错误')
-    return ok('登陆成功')
+# @main_bp.route("/all-links")
+# def all_links():
+#     links = []
+#     for rule in app.url_map.iter_rules():
+#         if len(rule.defaults) >= len(rule.arguments):
+#             url = url_for(rule.endpoint, **(rule.defaults or {}))
+#             links.append((url, rule.endpoint))
+#     return render_template("show_links.html", links=links)

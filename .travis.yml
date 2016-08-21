@@ -6,6 +6,7 @@ dist: trusty
 sudo: required
 
 before_cache:
+  - rm -rf $HOME/miniconda*
   - rm -f $HOME/miniconda/pkgs/*.tar.bz2
   - rm -rf $HOME/miniconda/pkgs/cache
 
@@ -13,11 +14,6 @@ cache:
   apt: true
   directories:
     - $HOME/miniconda
-
-install:
-  # Install conda
-  - sudo pip install conda
-  - export PATH=$HOME/miniconda/bin:$PATH
 
 addons:
   apt:
