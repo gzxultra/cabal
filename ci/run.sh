@@ -5,8 +5,8 @@ set -e
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 export PATH="$HOME/miniconda/bin:$PATH"
-# export PYTHONPATH="$DIR/..:$PYTHONPATH"
 
+echo "$PYTHONPATH"
 export CABAL_APP_CONFIG="config.test_app_config"
 export CABEL_DB_CONFIG="config.test_db_config"
 
@@ -28,6 +28,7 @@ echo 'init db...done'
 
 # Run tests
 
+export PYTHONPATH="$DIR/..:$PYTHONPATH"
 py.test -x -vv -s $DIR/../site/tests/
 
 
