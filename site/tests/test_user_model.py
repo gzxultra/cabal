@@ -1,6 +1,6 @@
 # coding: utf-8
 
 
-def test_import_conda():
+def test_user_model():
     import peewee   # noqa
 
