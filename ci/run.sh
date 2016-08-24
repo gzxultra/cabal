@@ -7,6 +7,7 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 export PATH="$HOME/miniconda/bin:$PATH"
 
 echo "$PYTHONPATH"
+
 export CABAL_APP_CONFIG="config.test_app_config"
 export CABEL_DB_CONFIG="config.test_db_config"
 
