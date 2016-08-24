@@ -4,8 +4,24 @@
     <meta charset="utf-8">
     <title>cabal</title>
   </head>
-  <body>
-    <app></app>
+  <body class="loaded">
+    <div class="main-wrapper">
+      <div id="app" class="app">
+        <aside class="sidebar">
+          <div class="sidebar-container">
+            <div class="sidebar-header"></div>
+            <nav class="menu">
+              <ul class="nav metismenu" id="sidebar-menu">
+                <li class="active">
+                  <a v-link="{ path: '/', activeClass: 'current', exact: true}"> <i class="fa fa-home"></i> 用户中心</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </aside>
+        <router-view></router-view>
+      </div>
+    </div>
     <!-- built files will be auto injected -->
   </body>
 </html>
