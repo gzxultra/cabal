@@ -14,12 +14,10 @@ git ruby foreman python-2.7 pre-commit npm
 1) install conda
 ```bash
 for OS X:
-brew install conda
 wget https://repo.continuum.io/miniconda/Miniconda2-latest-MacOSX-x86_64.sh
 bash Miniconda2-latest-MacOSX-x86_64.sh
 
 for Linux:
-apt-get install conda
 wget https://repo.continuum.io/miniconda/Miniconda2-latest-Linux-x86_64.sh
 bash Miniconda2-latest-MacOSX-x86_64.sh
 ```
@@ -27,14 +25,15 @@ bash Miniconda2-latest-MacOSX-x86_64.sh
 2) clone source
 ```bash
 git clone https://github.com/gzxultra/cabal.git
-conda env create -f cabal/environment.yml
+cd cabal
+conda env create -f environment.yml
 source activate cabal
 ```
 
-3) run app via foreman Procfile
+3) run app via honcho Procfile
 ```bash
 cd cabal
-foreman s
+honcho start
 ```
 
 ## Static Files Compiled

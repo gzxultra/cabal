@@ -25,6 +25,7 @@ dependencies:
 - readline=6.2=2
 - setuptools=25.1.6=py27_0
 - simplegeneric=0.8.1=py27_1
+- simplejson=3.8.2=py27_0
 - six=1.10.0=py27_0
 - sqlite=3.13.0=0
 - tk=8.5.18=0
@@ -35,7 +36,9 @@ dependencies:
 - zlib=1.2.8=3
 - pip:
   - backports.shutil-get-terminal-size==1.0.0
+  - honcho==0.7.1
   - ipython-genutils==0.1.0
+  - peewee==2.8.3
   - prompt-toolkit==1.0.3
   - py==1.4.31
   - pytest==3.0.1
