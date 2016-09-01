@@ -12,6 +12,7 @@ export CABAL_APP_CONFIG="config.test_app_config"
 export CABEL_DB_CONFIG="config.test_db_config"
 
 
+
 # Activate Python environment
 echo 'activate cabal'
 source activate cabal

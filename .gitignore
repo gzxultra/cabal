@@ -88,4 +88,8 @@ ENV/
 # Rope project settings
 .ropeproject
 
+# node files
 node_modules/
+
+# sftp stuff
+sftp-config.json
