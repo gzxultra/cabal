@@ -7,7 +7,12 @@ import vendor from './vendor/vendor'
 vendor()
 
 Vue.use(VueRouter)
-const router = new VueRouter()
+const router = new VueRouter({
+  hashbang: false,
+  history: true,
+  linkActiveClass: "active"
+})
+router.mode = 'html5'
 const app = Vue.extend({})
 configRouter(router)
 router.start(app, '#app')
