@@ -7,7 +7,7 @@ Cabal is a system that enables every one to use my shadowsocks service.
 [![Join the chat at https://gitter.im/the-cabal/Lobby](https://badges.gitter.im/the-cabal/Lobby.svg)](https://gitter.im/the-cabal/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 ## Prerequisition
-git ruby foreman python-2.7 pre-commit npm
+git ruby foreman python-2.7 pre-commit npm mysql
 
 ## Deloyment
 
@@ -19,7 +19,7 @@ bash Miniconda2-latest-MacOSX-x86_64.sh
 
 for Linux:
 wget https://repo.continuum.io/miniconda/Miniconda2-latest-Linux-x86_64.sh
-bash Miniconda2-latest-MacOSX-x86_64.sh
+bash Miniconda2-latest-Linux-x86_64.sh
 ```
 
 2) clone source
@@ -38,7 +38,7 @@ honcho start
 
 ## Static Files Compiled
 
-**It is recommended to use npm 3+ for a more efficient dependency tree.**
+**npm 3+ is recommended for a more efficient dependency tree.**
 
 ```bash
 cd cabal/site
