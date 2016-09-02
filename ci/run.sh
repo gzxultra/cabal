@@ -31,7 +31,7 @@ echo 'init db...done'
 # Run tests
 
 # export PYTHONPATH="$DIR/..:$PYTHONPATH"
-PYTHONPATH=.
+# PYTHONPATH=.
 py.test -x -vv -s $DIR/../site/tests/
 
 
