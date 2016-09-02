@@ -1,20 +1,24 @@
 # coding: utf-8
-from base import BaseModel
-from peewee import CharField
+from peewee import CharField, IntegerField, BooleanField
 from werkzeug.security import generate_password_hash, check_password_hash
+from models.base import BaseModel
 
 
 class User(BaseModel):
     email = CharField(unique=True)
-    name = CharField(unique=True)
+    name = CharField()
     password = CharField()
+    is_admin = BooleanField(default=False)
+    is_email_verify = BooleanField(default=False)
+    reg_ip = CharField(default='127.0.0.1')
+    referer_id = IntegerField(default=0)
 
     class Meta:
         db_table = 'user'
 
     @classmethod
-    def create(cls, email, name, password):
-        u = cls(email=email, name=name, password=generate_password_hash(password))
+    def create(cls, email, name, password, reg_ip='127.0.0.1', referer_id=0):
+        u = cls(email=email, name=name, password=generate_password_hash(password), reg_ip=reg_ip, referer_id=referer_id)
         return u.save()
 
     @classmethod
