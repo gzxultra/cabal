@@ -4,6 +4,7 @@ from views import main_bp
 from lib.render import ok, error
 from lib.ip import get_ip_by_request
 from models.user import User
+from flask_login import login_user
 
 
 @main_bp.route('/auth/sign-up.json', methods=['POST'])
@@ -25,4 +26,6 @@ def login():
     password = request.form.get('password').strip()
     if not u.verify_password(password):
         return error('wrong password')
+
+    login_user(u)
     return ok('login success')
