@@ -9,6 +9,7 @@ from models.user import User
 
 
 def test_env():
+    sys.path.append('/home/gzxultra/cabal/site')
     assert os.environ['CABAL_APP_CONFIG'] == 'config.test_app_config'
     assert os.environ['CABAL_DB_CONFIG'] == 'config.test_db_config'
 
