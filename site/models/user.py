@@ -20,7 +20,8 @@ class User(UserMixin, BaseModel):
     @classmethod
     def create(cls, email, name, password, reg_ip='127.0.0.1', referer_id=0):
         u = cls(email=email, name=name, password=generate_password_hash(password), reg_ip=reg_ip, referer_id=referer_id)
-        return u.save()
+        u.save()
+        return u
 
     @classmethod
     def get_user_by_email(cls, email):
