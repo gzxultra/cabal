@@ -1,11 +1,13 @@
 # coding: utf-8
 from peewee import CharField, IntegerField, BooleanField
 from werkzeug.security import generate_password_hash, check_password_hash
-from models.base import BaseModel
+from models.base import BaseModel, database
+from models.user_ss_info import UserSSInfo
 from flask_login import UserMixin
 
 
 class User(UserMixin, BaseModel):
+    id = IntegerField(primary_key=True)
     email = CharField(unique=True)
     name = CharField()
     password = CharField()
@@ -18,9 +20,11 @@ class User(UserMixin, BaseModel):
         db_table = 'user'
 
     @classmethod
+    @database.atomic()
     def create(cls, email, name, password, reg_ip='127.0.0.1', referer_id=0):
         u = cls(email=email, name=name, password=generate_password_hash(password), reg_ip=reg_ip, referer_id=referer_id)
         u.save()
+        UserSSInfo.create(u.id)
         return u
 
     @classmethod

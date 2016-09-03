@@ -14,3 +14,15 @@ CREATE TABLE `user` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `email` (`email`)
 );
+
+
+CREATE TABLE `user_ss_info` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `port` int(11) NOT NULL,
+  `password` varchar(10) NOT NULL,
+  `create_time` datetime,
+  `update_time` datetime,
+  `_created_at` timestamp DEFAULT CURRENT_TIMESTAMP,
+  `_updated_at` timestamp DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+);
