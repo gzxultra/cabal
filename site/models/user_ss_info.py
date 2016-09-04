@@ -19,7 +19,6 @@ class PortRunsOutException(Exception):
 
 
 class UserSSInfo(BaseModel):
-    id = IntegerField(primary_key=True)
     user_id = IntegerField()
     port = IntegerField()
     password = CharField()

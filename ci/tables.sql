@@ -40,7 +40,7 @@ CREATE TABLE `user_login_gift` (
   `update_time` datetime,
   `_created_at` timestamp DEFAULT CURRENT_TIMESTAMP,
   `_updated_at` timestamp DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  PRIMARY KEY (`id`),
+  PRIMARY KEY (`id`)
 );
 
 

@@ -4,10 +4,10 @@ from decimal import Decimal
 from peewee import IntegerField
 from models.base import BaseModel, database
 from models.user_total_traffic import UserTotalTraffic
+from models.const.user_traffic import UserTrafficUpdateEvent
 
 
 class UserLoginGift(BaseModel):
-    id = IntegerField(primary_key=True)
     user_id = IntegerField()
     login_gift = IntegerField()
 
@@ -21,5 +21,6 @@ class UserLoginGift(BaseModel):
         gift = cls(user_id=user_id, login_gift=random_gift)
         gift.save()
         traffic_info = UserTotalTraffic.get(user_id == user_id)
-        traffic_info.update(total_traffic=(traffic_info.total_traffic+gift).quantize(Decimal('1.00')), update_event=1).save()
+        traffic_info.update(total_traffic=(traffic_info.total_traffic+gift).quantize(Decimal('1.00')),
+            update_event=UserTrafficUpdateEvent.login_gift).save()
         return gift
