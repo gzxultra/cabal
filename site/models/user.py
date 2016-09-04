@@ -3,6 +3,7 @@ from peewee import CharField, IntegerField, BooleanField
 from werkzeug.security import generate_password_hash, check_password_hash
 from models.base import BaseModel, database
 from models.user_ss_info import UserSSInfo
+from models.user_total_traffic import UserTotalTraffic
 from flask_login import UserMixin
 
 
@@ -25,6 +26,7 @@ class User(UserMixin, BaseModel):
         u = cls(email=email, name=name, password=generate_password_hash(password), reg_ip=reg_ip, referer_id=referer_id)
         u.save()
         UserSSInfo.create(u.id)
+        UserTotalTraffic.create(user_id=u.id)
         return u
 
     @classmethod

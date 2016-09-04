@@ -26,3 +26,28 @@ CREATE TABLE `user_ss_info` (
   `_updated_at` timestamp DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
 );
+
+
+CREATE TABLE `user_login_gift` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) NOT NULL,
+  `login_gift` int(11) NOT NULL,
+  `create_time` datetime,
+  `update_time` datetime,
+  `_created_at` timestamp DEFAULT CURRENT_TIMESTAMP,
+  `_updated_at` timestamp DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+);
+
+
+CREATE TABLE `user_total_traffic` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) NOT NULL,
+  `total_traffic` DECIMAL(15, 2) NOT NULL,
+  `update_event` tinyint(4) NOT NULL DEFAULT 0,
+  `create_time` datetime,
+  `update_time` datetime,
+  `_created_at` timestamp DEFAULT CURRENT_TIMESTAMP,
+  `_updated_at` timestamp DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+);
