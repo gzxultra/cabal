@@ -20,6 +20,7 @@ class PortRunsOutException(Exception):
 
 class UserSSInfo(BaseModel):
     id = IntegerField(primary_key=True)
+    user_id = IntegerField()
     port = IntegerField()
     password = CharField()
 
@@ -27,7 +28,7 @@ class UserSSInfo(BaseModel):
         db_table = 'user_ss_info'
 
     @classmethod
-    def create(cls, id):
+    def create(cls, user_id):
         # find an available port
         port = _find_an_available_port()
         if not port:
@@ -36,6 +37,6 @@ class UserSSInfo(BaseModel):
         password = ''.join([random.choice(string.ascii_letters+string.digits) for i in range(8)])
 
         # create record
-        info = UserSSInfo(port=port, password=password)
+        info = UserSSInfo(user_id=user_id, port=port, password=password)
         info.save()
         return info

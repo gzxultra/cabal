@@ -25,13 +25,25 @@ class User(UserMixin, BaseModel):
     def create(cls, email, name, password, reg_ip='127.0.0.1', referer_id=0):
         u = cls(email=email, name=name, password=generate_password_hash(password), reg_ip=reg_ip, referer_id=referer_id)
         u.save()
+<<<<<<< da90bed9d999d2055b40eedc9f4e8bb700e63200
         UserSSInfo.create(u.id)
         UserTotalTraffic.create(user_id=u.id)
+=======
+        UserSSInfo.create(user_id=u.id)
+>>>>>>> update ss info table
         return u
 
     @classmethod
     def get_user_by_email(cls, email):
-        return User.select().where(email=email)
+        return User.get(cls.email == email)
+
+    @property
+    def port(self):
+        return UserSSInfo.get(User.user_id == self.id).port
+
+    @property
+    def ss_password(self):
+        return UserSSInfo.get(User.user_id == self.id).password
 
     def verify_password(self, password):
         return check_password_hash(self.password, password)
