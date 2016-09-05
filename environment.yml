@@ -43,4 +43,6 @@ dependencies:
   - prompt-toolkit==1.0.3
   - py==1.4.31
   - pytest==3.0.1
-
+  - pycrypto==2.6.1
+  - raven==5.26.0
+  - blinker==1.4
