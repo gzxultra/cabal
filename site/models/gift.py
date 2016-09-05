@@ -20,9 +20,10 @@ class UserLoginGift(BaseModel):
         random_gift = random.randrange(50, 200)
         gift = cls(user_id=user_id, login_gift=random_gift)
         gift.save()
-        traffic_info = UserTotalTraffic.get(user_id == user_id)
-        traffic_info.update(total_traffic=(traffic_info.total_traffic+gift).quantize(Decimal('1.00')),
-            update_event=UserTrafficUpdateEvent.login_gift).save()
+        traffic_info = UserTotalTraffic.get(UserTotalTraffic.user_id == user_id)
+        update = traffic_info.update(total_traffic=(traffic_info.total_traffic+gift.login_gift).quantize(Decimal('1.00')),
+            update_event=UserTrafficUpdateEvent.login_gift)
+        update.execute()
         return gift
 
     @classmethod
