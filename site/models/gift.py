@@ -24,3 +24,7 @@ class UserLoginGift(BaseModel):
         traffic_info.update(total_traffic=(traffic_info.total_traffic+gift).quantize(Decimal('1.00')),
             update_event=UserTrafficUpdateEvent.login_gift).save()
         return gift
+
+    @classmethod
+    def get_user_gifted_history(cls, user_id):
+        return [(i.login_gift, i.create_time) for i in cls.select().where(cls.user_id == user_id)]

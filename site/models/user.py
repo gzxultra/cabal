@@ -41,5 +41,9 @@ class User(UserMixin, BaseModel):
     def ss_password(self):
         return UserSSInfo.get(User.user_id == self.id).password
 
+    @property
+    def total_traffic(self):
+        return UserTotalTraffic.get(UserTotalTraffic.user_id == self.id).total_traffic
+
     def verify_password(self, password):
         return check_password_hash(self.password, password)
